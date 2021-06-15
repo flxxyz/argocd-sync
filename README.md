@@ -21,7 +21,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Sync ArgoCD Application
-        uses: safe2008/argocd-app-actions@master
+        uses: safe2008/argocd-app-actions@main
         with:
           address: "vault.example.com"
           token: ${{ secrets.ARGOCD_TOKEN }}
@@ -53,7 +53,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Sync ArgoCD Application
-        uses: safe2008/argocd-app-actions@master
+        uses: safe2008/argocd-app-actions@main
         with:
           address: "vault.example.com"
           token: ${{ secrets.ARGOCD_TOKEN }}

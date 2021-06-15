@@ -18,7 +18,7 @@ jobs:
 
       - name: Self test
         id: selftest
-        uses: safe2008/argocd-app-actions@master
+        uses: safe2008/argocd-app-actions@main
         with:
           address: ${{ secrets.ARGOCD_ADDR }}
           token: ${{ steps.secrets.outputs.ARGOCD_TOKEN }}
