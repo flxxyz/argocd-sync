@@ -3,7 +3,7 @@ module github.com/safe2008/argocd-actions
 go 1.16
 
 require (
-	github.com/argoproj/argo-cd/v2 v2.0.0
+	github.com/argoproj/argo-cd/v2 v2.0.3
 	github.com/coreos/go-etcd v2.0.0+incompatible // indirect
 	github.com/cpuguy83/go-md2man v1.0.10 // indirect
 	github.com/go-lintpack/lintpack v0.5.2 // indirect
