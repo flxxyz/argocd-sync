@@ -1,6 +1,6 @@
 name: "ArgoCD Application Sync Action"
 description: "Sync your ArgoCD application from GitHub"
-author: "omegion"
+author: "safe2008"
 inputs:
   address:
     description: "ArgoCD server address"
@@ -8,6 +8,10 @@ inputs:
   token:
     description: "ArgoCD token"
     required: true
+  insecure:
+    description: "insecure"
+    required: false
+    default: 'false'
   appName:
     description: "Application name to sync"
     required: true

@@ -1,6 +1,6 @@
 export PATH := $(abspath ./vendor/bin):$(PATH)
 
-BASE_PACKAGE_NAME  = github.com/omegion/argocd-actions
+BASE_PACKAGE_NAME  = github.com/safe2008/argocd-actions
 GIT_VERSION = $(shell git describe --tags --always 2> /dev/null || echo 0.0.0)
 LDFLAGS            = -ldflags "-X $(BASE_PACKAGE_NAME)/pkg/info.Version=$(GIT_VERSION)"
 BUFFER            := $(shell mktemp)
@@ -43,5 +43,5 @@ cut-tag:
 release: build-for-container
 	@echo "Releasing $(GIT_VERSION)"
 	docker build -t argocd-actions .
-	docker tag argocd-actions:latest omegion/argocd-actions:$(GIT_VERSION)
-	docker push omegion/argocd-actions:$(GIT_VERSION)
+	docker tag argocd-actions:latestsafe2008/argocd-actions:$(GIT_VERSION)
+	docker pushsafe2008/argocd-actions:$(GIT_VERSION)

@@ -18,9 +18,9 @@ jobs:
 
       - name: Self test
         id: selftest
-        uses: omegion/argocd-app-actions@master
+        uses: safe2008/argocd-app-actions@master
         with:
           address: ${{ secrets.ARGOCD_ADDR }}
           token: ${{ steps.secrets.outputs.ARGOCD_TOKEN }}
-          appName: blog
+          appName: horusec-platform
 

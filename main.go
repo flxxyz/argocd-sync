@@ -3,14 +3,22 @@ package main
 import (
 	"log"
 	"os"
+	"strconv"
 
-	"github.com/omegion/argocd-actions/pkg/argocd"
+	"github.com/safe2008/argocd-actions/pkg/argocd"
 )
 
 func main() {
+	insecure, error := strconv.ParseBool(os.Getenv("INPUT_INSECURE"))
+
+	if error != nil {
+		log.Fatalf("error: %v", error)
+	}
+
 	options := argocd.APIOptions{
-		Address: os.Getenv("INPUT_ADDRESS"),
-		Token:   os.Getenv("INPUT_TOKEN"),
+		Address:  os.Getenv("INPUT_ADDRESS"),
+		Token:    os.Getenv("INPUT_TOKEN"),
+		Insecure: insecure,
 	}
 
 	api := argocd.NewAPI(options)
