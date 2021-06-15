@@ -1,0 +1,5 @@
+fileignoreconfig:
+- filename: README.md
+  checksum: f292683a393f4c9e267f60a681bacc0676a994268acd2fe1703338c654bc6935
+- filename: go.sum
+  checksum: e922327f88955bc8a1c78ffdb9124025b5a4fea9a0e8e3024b2c1c9400c32727
