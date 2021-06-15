@@ -1,6 +1,8 @@
 name: "ArgoCD Sync Action"
 description: "Sync your ArgoCD application from GitHub"
 author: "safe2008"
+icon: "check"
+color: "green"
 inputs:
   address:
     description: "ArgoCD server address"
