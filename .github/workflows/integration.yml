@@ -22,5 +22,34 @@ jobs:
         with:
           address: ${{ secrets.ARGOCD_ADDR }}
           token: ${{ steps.secrets.outputs.ARGOCD_TOKEN }}
+          insecure: false
           appName: horusec-platform
 
+  argocd-dev:
+    runs-on: [self-hosted, linux, X64, safe2008]
+    steps:
+      - name: "Clone reposiory"
+        uses: actions/checkout@v2
+        with:
+          repository: "tdg-analytics-platform/spark-deployment.git"
+          ref: "main"
+
+      - name: Import Vault Secrets
+        id: secrets
+        uses: hashicorp/vault-action@v2.1.2
+        with:
+          url: ${{ secrets.VAULT_ADDR }}
+          method: token
+          token: ${{ secrets.VAULT_TOKEN }}
+          namespace: Analytics
+          secrets: |
+            analytics-secret/spark-deployment/argocd/data/token admin | ARGOCD_TOKEN ;
+
+      - name: "Sync ArgoCD Application"
+        id: selftest
+        uses: safe2008/argocd-app-actions@main
+        with:
+          address: ${{ secrets.ARGOCD_ADDR }}
+          token: ${{ steps.secrets.outputs.ARGOCD_TOKEN }}
+          insecure: false
+          appName: cost-analyzer
