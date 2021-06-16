@@ -37,9 +37,9 @@ jobs:
           url: ${{ secrets.VAULT_ADDR }}
           method: token
           token: ${{ secrets.VAULT_TOKEN }}
-          namespace: Analytics
+          namespace: analytics
           secrets: |
-            analytics-secret/spark-deployment/argocd/data/token admin | ARGOCD_TOKEN ;
+            analytics-secret/data/spark-deployment/argocd/token admin | ARGOCD_TOKEN ;
 
       - name: "Sync ArgoCD Application"
         id: selftest
