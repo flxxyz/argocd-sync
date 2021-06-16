@@ -26,7 +26,7 @@ jobs:
           appName: horusec-platform
 
   argocd-dev:
-    runs-on: [self-hosted, linux, X64, safe2008]
+    runs-on: ubuntu-latest
     steps:
       - name: "Clone reposiory"
         uses: actions/checkout@v2
