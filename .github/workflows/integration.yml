@@ -6,7 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
 
-      - name: Import Secrets
+      - name: Import Vault Secrets
         id: secrets
         uses: hashicorp/vault-action@v2.1.2
         with:
@@ -28,11 +28,7 @@ jobs:
   argocd-dev:
     runs-on: ubuntu-latest
     steps:
-      - name: "Clone reposiory"
-        uses: actions/checkout@v2
-        with:
-          repository: "tdg-analytics-platform/spark-deployment.git"
-          ref: "main"
+      - uses: actions/checkout@master
 
       - name: Import Vault Secrets
         id: secrets
