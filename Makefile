@@ -43,5 +43,5 @@ cut-tag:
 release: build-for-container
 	@echo "Releasing $(GIT_VERSION)"
 	docker build -t argocd-actions .
-	docker tag argocd-actions:latest boriphuth/argocd-actions:$(GIT_VERSION)
-	docker push boriphuth/argocd-actions:$(GIT_VERSION)
+	docker tag argocd-actions:latest safe2008/argocd-actions:$(GIT_VERSION)
+	docker push safe2008/argocd-actions:$(GIT_VERSION)
