@@ -37,7 +37,7 @@ jobs:
           url: ${{ secrets.VAULT_ADDR }}
           method: token
           token: ${{ secrets.VAULT_TOKEN }}
-          namespace: analytics
+          namespace: Analytics
           secrets: |
             analytics-secret/data/spark-deployment/argocd/token admin | ARGOCD_TOKEN ;
 
