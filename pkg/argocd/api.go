@@ -17,14 +17,16 @@ type API struct {
 
 // APIOptions is options for API.
 type APIOptions struct {
-	Address  string
-	Token    string
-	Insecure bool
+	Address   string
+	Token     string
+	Insecure  bool
+	PlainText bool
 }
 
 // NewAPI creates new API.
 func NewAPI(options APIOptions) API {
 	clientOptions := argocdclient.ClientOptions{
+		PlainText:  options.PlainText,
 		ServerAddr: options.Address,
 		AuthToken:  options.Token,
 		Insecure:   options.Insecure,

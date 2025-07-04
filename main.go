@@ -5,7 +5,7 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/safe2008/argocd-actions/pkg/argocd"
+	"github.com/flxxyz/argocd-sync-action/pkg/argocd"
 )
 
 func main() {
@@ -15,10 +15,16 @@ func main() {
 		log.Fatalf("error: %v", error)
 	}
 
+	plainText, error := strconv.ParseBool(os.Getenv("INPUT_PLAINTEXT"))
+	if error != nil {
+		log.Fatalf("error: %v", error)
+	}
+
 	options := argocd.APIOptions{
-		Address:  os.Getenv("INPUT_ADDRESS"),
-		Token:    os.Getenv("INPUT_TOKEN"),
-		Insecure: insecure,
+		Address:   os.Getenv("INPUT_ADDRESS"),
+		Token:     os.Getenv("INPUT_TOKEN"),
+		Insecure:  insecure,
+		PlainText: plainText,
 	}
 
 	api := argocd.NewAPI(options)

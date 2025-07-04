@@ -1,4 +1,4 @@
-module github.com/safe2008/argocd-actions
+module github.com/flxxyz/argocd-sync-action
 
 go 1.16
 

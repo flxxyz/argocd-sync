@@ -1,6 +1,6 @@
-name: "ArgoCD Sync Action"
+name: "ArgoCD Sync"
 description: "Sync your ArgoCD application from GitHub"
-author: "safe2008"
+author: "flxxyz"
 inputs:
   address:
     description: "ArgoCD server address"
@@ -10,6 +10,10 @@ inputs:
     required: true
   insecure:
     description: "insecure"
+    required: false
+    default: 'false'
+  plaintext:
+    description: "plaintext, use http instead of https"
     required: false
     default: 'false'
   appName:
