@@ -1,4 +1,4 @@
-name: "ArgoCD Sync"
+name: "argocd-sync"
 description: "Sync your ArgoCD application from GitHub"
 author: "flxxyz"
 inputs:
