@@ -1,4 +1,4 @@
-name: "argocd-sync"
+name: "argocd-sync-application"
 description: "Sync your ArgoCD application from GitHub"
 author: "flxxyz"
 inputs:
@@ -22,6 +22,3 @@ inputs:
 runs:
   using: "docker"
   image: "Dockerfile"
-branding:
-  icon: 'anchor'
-  color: 'green'
