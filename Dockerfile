@@ -17,6 +17,6 @@ RUN make build-for-container
 
 FROM ${FROM_IMAGE}
 
-COPY --from=builder /app/dist/argocd-sync-action-linux /bin/argocd-sync-action
+COPY --from=builder /app/dist/argocd-sync-linux /bin/argocd-sync
 
-ENTRYPOINT ["argocd-sync-action"]
+ENTRYPOINT ["argocd-sync"]

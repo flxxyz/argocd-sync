@@ -6,7 +6,7 @@ run:
 
 linters-settings:
   goimports:
-    local-prefixes: github.com/flxxyz/argocd-sync-action
+    local-prefixes: github.com/flxxyz/argocd-sync
   golint:
     min-confidence: 0
   govet:
