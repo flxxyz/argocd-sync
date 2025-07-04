@@ -5,7 +5,7 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/flxxyz/argocd-sync/pkg/argocd"
+	"github.com/flxxyz/argocd-sync-app/pkg/argocd"
 )
 
 func main() {

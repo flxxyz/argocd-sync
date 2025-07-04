@@ -1,4 +1,4 @@
-module github.com/flxxyz/argocd-sync
+module github.com/flxxyz/argocd-sync-app
 
 go 1.16
 

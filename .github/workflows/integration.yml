@@ -18,7 +18,7 @@ jobs:
 
       - name: Self test
         id: selftest
-        uses: flxxyz/argocd-sync@main
+        uses: flxxyz/argocd-sync-app@main
         with:
           address: ${{ secrets.ARGOCD_ADDR }}
           token: ${{ steps.secrets.outputs.ARGOCD_TOKEN }}
@@ -43,7 +43,7 @@ jobs:
 
       - name: "Sync ArgoCD Application"
         id: selftest
-        uses: flxxyz/argocd-sync@main
+        uses: flxxyz/argocd-sync-app@main
         with:
           address: ${{ secrets.ARGOCD_ADDR }}
           token: ${{ steps.secrets.outputs.ARGOCD_TOKEN }}
